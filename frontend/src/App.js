@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, BarChart, Bar
@@ -112,15 +112,11 @@ const sleepData = [
   { day: "Sun", hrs: 7 },
 ];
 
-const moodData = [
-  { day: "Mon", mood: 3 },
-  { day: "Tue", mood: 4 },
-  { day: "Wed", mood: 2 },
-  { day: "Thu", mood: 5 },
-  { day: "Fri", mood: 4 },
-  { day: "Sat", mood: 5 },
-  { day: "Sun", mood: 4 },
-];
+<LineChart data={moodData}>
+  <XAxis dataKey="day" />
+  <YAxis />
+  <Line type="monotone" dataKey="mood" stroke="#8884d8" />
+</LineChart>
 
 // ── MAIN APP ───────────────────────────────────────────────────────────────
 export default function App() {
